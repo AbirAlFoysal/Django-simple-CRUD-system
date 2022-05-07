@@ -1,0 +1,28 @@
+{% load widget_tweaks %}
+{% comment %} widgets imports infos {% endcomment %}
+<html>
+    <head>
+
+    </head>
+    <h1  style="background-color: green">
+<br>
+
+    </h1>
+    <body style="background-color: aquamarine;">
+
+
+<form method="post">
+{% csrf_token %}
+{% for field in form.visible_fields  %}
+<label for="{{ field.id_for_label }}">{{ field.label }}</label>
+<p>{{ field|add_class:'form-control' }}</p>
+{% for error in field.errors  %}
+<span>{{error}}</span>
+{% endfor %}
+{% endfor %}
+<input type="submit" value="Update">
+
+</form>
+
+    </body>
+</html>

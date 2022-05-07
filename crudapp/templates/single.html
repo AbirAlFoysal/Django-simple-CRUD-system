@@ -1,0 +1,18 @@
+<html>
+    <head>
+
+    </head>
+    <body style="background-color: #ababab;">
+  <h2><a href="#">
+      {{post.title}}
+    </a></h2>
+  <li>{{post.author}}</li>
+  <li>{{post.excerpt}}</li>
+
+  <li>{{post.published}}</li>
+  <li>Catagoty: {{post.slug}}</li>
+  <br>
+  <a href="{% url 'edit' post.pk %}">Edit</a>
+<a href="{% url 'delete' post.pk %}">Delete</a>
+   </body>
+</html>

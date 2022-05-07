@@ -1,0 +1,21 @@
+<html>
+    <head>
+
+    </head>
+    <h1  style="background-color: green">
+<a href="{% url 'add' %}">Add Post</a>
+
+    </h1>
+    <body style="background-color: aquamarine;">
+        <ul>
+{% for core in cores %}
+  <h2><a href="{{core.get_absolute_url}}">
+      {{core.title}}
+    </a></h2>
+  <li>{{core.author}}</li>
+  <li>{{core.published}}</li>
+  <li>Catagoty: {{core.slug}}</li>
+{% endfor %}
+</ul>
+    </body>
+</html>
